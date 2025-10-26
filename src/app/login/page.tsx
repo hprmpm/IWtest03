@@ -22,7 +22,7 @@ export default function LoginPage() {
         <p className="mb-4">ようこそ、{session.user?.email}</p>
         <button
           onClick={() => signOut()}
-          className="w-full bg-red-500 text-white px-4 py-2 rounded"
+          className="w-full bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
         >
           ログアウト
         </button>
@@ -74,7 +74,7 @@ export default function LoginPage() {
         </div>
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white px-4 py-2 rounded"
+          className="w-full bg-indigo-600 text-white px-4 py-2 rounded cursor-pointer"
         >
           ログイン
         </button>
@@ -82,13 +82,13 @@ export default function LoginPage() {
       <hr className="my-6" />
       <button
         onClick={() => signIn("google")}
-        className="w-full bg-red-500 text-white px-4 py-2 rounded"
+        className="w-full bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
       >
         Googleでログイン
       </button>
       <p className="mt-4 text-center">
         新規登録は{" "}
-        <a href="/register" className="text-blue-600 underline">
+        <a href="/register" className="text-blue-600 underline cursor-pointer">
           こちら
         </a>
       </p>

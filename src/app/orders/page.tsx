@@ -73,12 +73,12 @@ export default function OrdersDashboard() {
     const guestIndexMap: Map<number, number> = (() => {
         const map = new Map<number, number>();
         let count = 0;
-        for (const o of orders) {
-            if (!o.user) {
-                count += 1;
-                map.set(o.id, count);
-            }
+        for (const o of [...orders].reverse()) { 
+        if (!o.user) {
+            count += 1;
+            map.set(o.id, count);
         }
+    }
         return map;
     })();
 
@@ -125,8 +125,8 @@ export default function OrdersDashboard() {
                                 ? [order.user.lastName, order.user.firstName].filter(Boolean).join(" ") || "-"
                                 : ([order.lastName, order.firstName].filter(Boolean).join(" ") || "-");
                             const address =
-                                order.user?.address
-                                ?? (order.address ?? "-");
+                                order.address
+                                ?? (order.user?.address ?? "-");
 
                             return (
                                 <tr key={order.id}>
